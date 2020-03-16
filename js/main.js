@@ -56,7 +56,15 @@ function hideLightbox(){
   gotVideo.pause()
 }
 
+function animateBanner() {
+  let offSetValue = 600;
+  let targetvalue = offSetValue * this.dataset.offset;
+   debugger;
 
-sigilButtons.forEach(button => button.addEventListener("click", showLightbox));
+  //figure out how to that the banners "slide" using this new value 
+}
+
+//sigilButtons.forEach(button => button.addEventListener("click", showLightbox));
+sigilButtons.forEach(button => button.addEventListener("click", animateBanner));
 closeLightbox.addEventListener("click", hideLightbox)
 })();
