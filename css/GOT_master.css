@@ -116,6 +116,11 @@ main {
 
 }
 
+.house-info {
+	color: white;
+	font-size: 20px;
+}
+
 .show-lightbox {
   display: block;
 }
