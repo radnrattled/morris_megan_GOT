@@ -5,8 +5,8 @@ let sigilButtons = document.querySelectorAll('.sigilContainer');
     closeLightbox = lightBox.querySelector('.close');
     gotVideo = lightBox.querySelector('video');
     houseName = document.querySelector("h1");
-    houseDesc = document.querySelector(".house-info")
-
+    houseDesc = document.querySelector(".house-info");
+    houseImages = document.querySelector("#houseImages");
 const houseData = [
 ["Stark", `House Stark of Winterfell is a Great House of Westeros, ruling over the vast region known as the North from their seat in Winterfell. It is one of the oldest lines of Westerosi nobility by far, claiming a line of descent stretching back over eight thousand years. Before the Targaryen conquest, as well as during the War of the Five Kings and Daenerys Targaryen's invasion of Westeros, the leaders of House Stark ruled over the region as the Kings in the North.
 `],
@@ -24,6 +24,7 @@ House Greyjoy's sigil is traditionally a golden kraken on a black field. Their h
 ["TARGERYEN",`House Targaryen of Dragonstone is a Great House of Westeros and was the ruling royal House of the Seven Kingdoms for three centuries since it conquered and unified the realm, before it was deposed during Robert's Rebellion and House Baratheon replaced it as the new royal House. The few surviving Targaryens fled into exile to the Free Cities of Essos across the Narrow Sea. Currently based on Dragonstone off of the eastern coast of Westeros, House Targaryen seeks to retake the Seven Kingdoms from House Lannister, who formally replaced House Baratheon as the royal House following the destruction of the Great Sept of Baelor.`],
 ["FREY",`House Frey of the Twins was the Great House of the Riverlands, having gained their position for their treachery against their former liege lords, House Tully, who were stripped of all their lands and titles for their rebellion against the Iron Throne; House Tully had supported the independence movement for the Kingdom of the North. The current head of the house is unknown following the assassinations of Lord Walder Frey and two of his sons, Lothar Frey and Walder Rivers, by the vengeful Arya Stark. This is made more complex by the subsequent assassination of all the male Freys soon after.`],
 ];
+
 
 function showLightbox() {
   //pop open lightbox and show content
@@ -58,9 +59,9 @@ function hideLightbox(){
 
 function animateBanner() {
   let offSetValue = 600;
-  let targetvalue = offSetValue * this.dataset.offset;
+  let targetvalue = offSetValue * this.dataset.offset[0];
 
-
+houseImages.targetvalue ??
   //figure out how to that the banners "slide" using this new value 
 }
 
