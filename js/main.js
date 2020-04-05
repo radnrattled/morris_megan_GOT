@@ -61,7 +61,7 @@ function animateBanner() {
   let offSetValue = 600;
   let targetvalue = offSetValue * this.dataset.offset[0];
 
-houseImages.targetvalue ??
+houseImages.targetvalue ?? //help?
   //figure out how to that the banners "slide" using this new value 
 }
 
