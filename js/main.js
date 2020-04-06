@@ -7,6 +7,7 @@ let sigilButtons = document.querySelectorAll('.sigilContainer');
     houseName = document.querySelector("h1");
     houseDesc = document.querySelector(".house-info");
     houseImages = document.querySelector("#houseImages");
+
 const houseData = [
 ["Stark", `House Stark of Winterfell is a Great House of Westeros, ruling over the vast region known as the North from their seat in Winterfell. It is one of the oldest lines of Westerosi nobility by far, claiming a line of descent stretching back over eight thousand years. Before the Targaryen conquest, as well as during the War of the Five Kings and Daenerys Targaryen's invasion of Westeros, the leaders of House Stark ruled over the region as the Kings in the North.
 `],
@@ -25,30 +26,42 @@ House Greyjoy's sigil is traditionally a golden kraken on a black field. Their h
 ["FREY",`House Frey of the Twins was the Great House of the Riverlands, having gained their position for their treachery against their former liege lords, House Tully, who were stripped of all their lands and titles for their rebellion against the Iron Throne; House Tully had supported the independence movement for the Kingdom of the North. The current head of the house is unknown following the assassinations of Lord Walder Frey and two of his sons, Lothar Frey and Walder Rivers, by the vengeful Arya Stark. This is made more complex by the subsequent assassination of all the male Freys soon after.`],
 ];
 
+function animateBanner() {
+  console.log(2)
+  //debugger
+  let offSetValue = 600;
+  let targetvalue = offSetValue * this.dataset.offset;
+
+  houseImages.style.right = targetvalue + "px";
+  //figure out how to that the banners "slide" using this new value 
+}
 
 function showLightbox() {
+
+    
+  
   //pop open lightbox and show content
   //start with the house name
   houseName.textContent = `House ${houseData[this.dataset.offset][0]}`;
   houseDesc.textContent = `${houseData[this.dataset.offset][1]}`;
   //debugger
   //Images change
-
+  
   
   // need to get the class name from the element so we can match the video source
   let targetName = this.className.split(" ")[1]; //this wil strip out the house name 
   let targetSource = targetName.charAt(0).toUpperCase() + targetName.slice(1);
   let newVideoSource = `video/house-${targetSource}.mp4`
 
-
+setTimeout( function(){
 
   lightBox.classList.add('show-lightbox');
   gotVideo.src = newVideoSource;
   gotVideo.load();
   gotVideo.play();
 
+}, 1000 );
 }
-
 
 
 function hideLightbox(){
@@ -57,13 +70,6 @@ function hideLightbox(){
   gotVideo.pause()
 }
 
-function animateBanner() {
-  let offSetValue = 600;
-  let targetvalue = offSetValue * this.dataset.offset[0];
-
-houseImages.targetvalue ?? //help?
-  //figure out how to that the banners "slide" using this new value 
-}
 
 sigilButtons.forEach(button => button.addEventListener("click", showLightbox));
 sigilButtons.forEach(button => button.addEventListener("click", animateBanner));
